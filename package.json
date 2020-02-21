@@ -1,0 +1,23 @@
+{
+  "name": "aftonbladet-checker-nuxt",
+  "version": "1.0.0",
+  "description": "Nuxt application to gather some fun information about aftonbladet articles",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "daniel.verberg@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^9.2.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.4",
+    "@types/react": "^16.9.22",
+    "typescript": "^3.8.2"
+  }
+}
