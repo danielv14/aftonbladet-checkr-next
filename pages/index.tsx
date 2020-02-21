@@ -1,11 +1,10 @@
-import { Hello } from "../components/Hello";
+import { Hello } from '../components/Hello';
+import * as React from 'react';
 
-const Index = () => {
-  return (
-    <div>
-      <Hello />
-    </div>
-  );
-}
+const Index: React.FC = () => (
+  <>
+    <Hello />
+  </>
+);
 
-export default Index
+export default Index;
