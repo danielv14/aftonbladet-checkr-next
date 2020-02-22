@@ -9,5 +9,6 @@ export const getAllEntries = async () => {
     return checkers as Checker[];
   } catch (err) {
     console.log('Error getting documents', err);
+    return [] as Checker[];
   }
 };
