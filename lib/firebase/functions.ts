@@ -16,6 +16,15 @@ export const getAllEntries = async () => {
   }
 };
 
+export const getLatestEntry = async () => {
+  const querySnapshot = await checkersCollection
+    .orderBy('created', 'desc')
+    .limit(1)
+    .get();
+  const checkers = querySnapshot.docs.map(toFireStoreDocData);
+  return checkers[0];
+};
+
 export const addEntryToDB = (entry: FirebaseChecker) => checkersCollection.add(entry);
 
 export const deleteAllEntriesFromDB = () => {
