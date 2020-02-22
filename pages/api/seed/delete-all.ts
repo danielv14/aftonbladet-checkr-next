@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { deleteAllEntriesFromDB } from '../../../lib/firebase/functions';
+import { deleteAllEntriesFromDB } from '../../../lib/firebase/actions';
 import { validFirebaseApiKey } from '../../../utils/validApiKey';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {

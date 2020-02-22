@@ -1,6 +1,6 @@
 import { Checker, FirebaseChecker } from '../../interfaces/Checker';
 import { checkersTestData } from '../../utils/testData/checkersTestData';
-import { addEntryToDB } from './functions';
+import { addEntryToDB } from './actions';
 
 const randomSeedChecker = (seed: FirebaseChecker[]) => seed[Math.floor(Math.random() * seed.length)];
 

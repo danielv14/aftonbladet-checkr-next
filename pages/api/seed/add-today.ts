@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { validFirebaseApiKey } from '../../../utils/validApiKey';
 import { scrapeForCurrentCheckers } from '../../../lib/scraping/scraper';
 import { getCurrentDate } from '../../../utils/getCurrentDate';
-import { addEntryToDB, getLatestEntry } from '../../../lib/firebase/functions';
+import { addEntryToDB, getLatestEntry } from '../../../lib/firebase/actions';
 import { FirebaseChecker } from '../../../interfaces/Checker';
 import { isToday } from '../../../utils/isToday';
 

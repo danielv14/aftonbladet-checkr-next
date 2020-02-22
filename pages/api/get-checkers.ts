@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getAllEntries } from '../../lib/firebase/functions';
+import { getAllEntries } from '../../lib/firebase/actions';
 import { Checker } from '../../interfaces/Checker';
 
 interface GetCheckersResponse {
