@@ -1,5 +1,5 @@
 export interface Checker {
-  id: number;
-  checkers: number;
+  id: string;
+  amount: number;
   created: string;
 }
