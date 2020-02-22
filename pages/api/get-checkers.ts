@@ -1,5 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { checkersTestData } from '../../utils/testData/checkersTestData';
-import { Checker } from '../../interfaces/Checker';
+import { getAllEntries } from '../../firebase/functions';
 
-export default (_req: NextApiRequest, res: NextApiResponse<Checker[]>) => res.status(200).json(checkersTestData);
+export default async (_req: NextApiRequest, res: NextApiResponse) => {
+  const data = await getAllEntries();
+  res.status(200).json(data);
+};
