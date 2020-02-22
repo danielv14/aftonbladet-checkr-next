@@ -11,6 +11,8 @@
   "author": "daniel.verberg@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "firebase": "^7.9.1",
     "next": "^9.2.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
