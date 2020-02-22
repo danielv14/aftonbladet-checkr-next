@@ -1,6 +1,6 @@
 import { checkersCollection } from './db';
 import { toFireStoreDocData } from './utils';
-import { Checker } from '../interfaces/Checker';
+import { Checker } from '../../interfaces/Checker';
 
 export const getAllEntries = async () => {
   try {

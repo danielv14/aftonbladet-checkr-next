@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getAllEntries } from '../../firebase/functions';
+import { getAllEntries } from '../../lib/firebase/functions';
 
 export default async (_req: NextApiRequest, res: NextApiResponse) => {
   const data = await getAllEntries();
