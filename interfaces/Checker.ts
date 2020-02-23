@@ -13,6 +13,7 @@ export enum CheckerFields {
   created = 'Datum',
   amount = 'Antal',
   day = 'Dag',
+  year = 'År',
 }
 
 interface CheckerBase {
@@ -25,4 +26,8 @@ export interface Checker extends CheckerBase {
 
 export interface CheckerByWeekDay extends CheckerBase {
   [CheckerFields.day]: Weekday;
+}
+
+export interface CheckerByYear extends CheckerBase {
+  [CheckerFields.year]: string;
 }

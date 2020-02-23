@@ -1,11 +1,11 @@
 import * as Nivo from '@nivo/bar';
 import * as React from 'react';
-import { Checker, CheckerFields, CheckerByWeekDay } from '../../interfaces/Checker';
+import { Checker, CheckerFields, CheckerByWeekDay, CheckerByYear } from '../../interfaces/Checker';
 
 type BarLayout = 'vertical' | 'horizontal';
 
 export interface ResponsiveBarProps {
-  checkers: Checker[] | CheckerByWeekDay[];
+  checkers: Checker[] | CheckerByWeekDay[] | CheckerByYear[];
   layout?: BarLayout;
   keys: CheckerFields[];
   indexBy: CheckerFields;
