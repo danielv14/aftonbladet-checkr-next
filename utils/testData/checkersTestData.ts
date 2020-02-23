@@ -1,4 +1,13 @@
-import { FirebaseChecker } from '../../interfaces/Checker';
+import { FirebaseChecker, CheckerDTO } from '../../interfaces/Checker';
+
+export const testDataAsCheckerDTO = () =>
+  checkersTestData.map((data, index) => {
+    return {
+      amount: data.amount,
+      created: data.created,
+      id: `${index}`,
+    } as CheckerDTO;
+  });
 
 export const checkersTestData: FirebaseChecker[] = [
   {
