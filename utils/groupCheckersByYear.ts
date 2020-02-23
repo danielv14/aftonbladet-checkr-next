@@ -1,4 +1,4 @@
-import { Checker, CheckerFields, CheckerByYear } from '../../interfaces/Checker';
+import { Checker, CheckerFields, CheckerByYear } from '../interfaces/Checker';
 import { getYear } from 'date-fns';
 
 export const groupCheckersByYear = (checkers: Checker[]): CheckerByYear[] => {
