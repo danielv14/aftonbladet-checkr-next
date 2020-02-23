@@ -1,10 +1,10 @@
 import * as firebase from 'firebase';
-import { Checker } from '../../interfaces/Checker';
+import { CheckerDTO } from '../../interfaces/Checker';
 import { db } from './db';
 
 type documentData = firebase.firestore.QueryDocumentSnapshot<firebase.firestore.DocumentData>;
 
-export const toFireStoreDocData = (doc: documentData): Checker => {
+export const toFireStoreDocData = (doc: documentData): CheckerDTO => {
   return { id: doc.id, amount: doc.data().amount, created: doc.data().created };
 };
 
