@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Checker } from '../../../interfaces/Checker';
 import { Card } from '../../ui/Card';
 import { MarginLarge } from '../../ui/margins/MarginLarge';
 import { ResponsiveBar, ResponsiveBarProps } from '../ResponsiveBar';
