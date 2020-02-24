@@ -2,8 +2,8 @@ import { Checker, CheckerFields, CheckerByYear } from '../interfaces/Checker';
 import { getYear } from 'date-fns';
 
 export const groupCheckersByYear = (checkers: Checker[]): CheckerByYear[] => {
-  const uniqueYears = getYearSpan(checkers);
-  const data = uniqueYears.map(year => {
+  const years = getYearSpan(checkers);
+  const data = years.map(year => {
     const checkersByYear = checkers.filter(checker => filterCheckersByYear(checker, year));
     const checkersAmount = checkersByYear.map(getCheckerAmounts);
     const amount = checkersAmount.reduce((sum, x) => sum + x);
