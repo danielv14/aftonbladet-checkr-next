@@ -31,3 +31,9 @@ export interface CheckerByWeekDay extends CheckerBase {
 export interface CheckerByYear extends CheckerBase {
   [CheckerFields.year]: string;
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const isChecker = (object: any): object is Checker => CheckerFields.created in object;
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const isCheckerByYear = (object: any): object is CheckerByYear => CheckerFields.year in object;
