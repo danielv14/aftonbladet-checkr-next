@@ -1,6 +1,6 @@
 import { FirebaseChecker, CheckerDTO } from '../../interfaces/Checker';
 
-export const testDataAsCheckerDTO = () =>
+export const testDataAsCheckerDTO = async () =>
   checkersTestData.map((data, index) => {
     return {
       amount: data.amount,
