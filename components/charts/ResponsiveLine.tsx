@@ -1,6 +1,7 @@
 import * as Nivo from '@nivo/line';
 import * as React from 'react';
 import { Checker, CheckerFields } from '../../interfaces/Checker';
+import { sortCheckersByCreatedAsc } from '../../utils/sortCheckers';
 
 const lineColor = 'hsl(192, 70%, 50%)';
 
@@ -38,8 +39,9 @@ export interface ResponsiveLineProps {
 }
 
 export const ResponsiveLine: React.FC<ResponsiveLineProps> = ({ checkers }) => {
+  const sortedCheckers = checkers.sort(sortCheckersByCreatedAsc);
   const commonProperties = {
-    data: transformCheckerData(checkers),
+    data: transformCheckerData(sortedCheckers),
     schema: 'nivo',
     margin: { top: 50, right: 50, bottom: 50, left: 50 },
     axisTop: null,
