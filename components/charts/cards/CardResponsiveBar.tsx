@@ -30,3 +30,5 @@ export const CardResponsiveBar: React.FC<CardResponsiveBarProps> = ({ header, ..
     </>
   );
 };
+
+CardResponsiveBar.displayName = 'CardResponsiveBar';
