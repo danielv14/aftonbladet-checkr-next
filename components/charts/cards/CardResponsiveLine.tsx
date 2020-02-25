@@ -1,32 +1,17 @@
 import * as React from 'react';
-import { Card } from '../../ui/Card';
+import { Card, CardProps } from '../../ui/Card';
 import { MarginLarge } from '../../ui/margins/MarginLarge';
 import { ResponsiveLine, ResponsiveLineProps } from '../ResponsiveLine';
 
-interface CardResponsiveLineProps extends ResponsiveLineProps {
-  header: string;
-}
+interface CardResponsiveLineProps extends ResponsiveLineProps, CardProps {}
 
-export const CardResponsiveLine: React.FC<CardResponsiveLineProps> = ({ header, ...rest }) => {
+export const CardResponsiveLine: React.FC<CardResponsiveLineProps> = ({ header, height, ...rest }) => {
   return (
     <>
-      <Card>
-        <div>
-          <h2>{header}</h2>
-          <ResponsiveLine {...rest} />
-        </div>
+      <Card header={header} height={height}>
+        <ResponsiveLine {...rest} />
         <MarginLarge />
       </Card>
-      <style jsx>
-        {`
-          div {
-            height: 400px;
-          }
-          h2 {
-            text-align: center;
-          }
-        `}
-      </style>
     </>
   );
 };

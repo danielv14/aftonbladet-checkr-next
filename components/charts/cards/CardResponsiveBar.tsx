@@ -1,32 +1,17 @@
 import * as React from 'react';
-import { Card } from '../../ui/Card';
+import { Card, CardProps } from '../../ui/Card';
 import { MarginLarge } from '../../ui/margins/MarginLarge';
 import { ResponsiveBar, ResponsiveBarProps } from '../ResponsiveBar';
 
-interface CardResponsiveBarProps extends ResponsiveBarProps {
-  header: string;
-}
+interface CardResponsiveBarProps extends ResponsiveBarProps, CardProps {}
 
-export const CardResponsiveBar: React.FC<CardResponsiveBarProps> = ({ header, ...rest }) => {
+export const CardResponsiveBar: React.FC<CardResponsiveBarProps> = ({ header, height, ...rest }) => {
   return (
     <>
-      <Card>
-        <div>
-          <h2>{header}</h2>
-          <ResponsiveBar {...rest} />
-        </div>
+      <Card header={header} height={height}>
+        <ResponsiveBar {...rest} />
         <MarginLarge />
       </Card>
-      <style jsx>
-        {`
-          div {
-            height: 400px;
-          }
-          h2 {
-            text-align: center;
-          }
-        `}
-      </style>
     </>
   );
 };

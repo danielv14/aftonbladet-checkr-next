@@ -1,38 +1,19 @@
 import * as React from 'react';
-import { Card } from '../../ui/Card';
+import { Card, CardProps } from '../../ui/Card';
 import { MarginLarge } from '../../ui/margins/MarginLarge';
 import { ResponsiveCalendarProps, ResponsiveCalendar } from '../ResponsiveCalendar';
 
-interface CardResponsiveCalendarProps extends ResponsiveCalendarProps {
+interface CardResponsiveCalendarProps extends ResponsiveCalendarProps, CardProps {
   header: string;
-  cardHeight?: number;
 }
 
-export const CardResponsiveCalendar: React.FC<CardResponsiveCalendarProps> = ({
-  header,
-  cardHeight = 400,
-  ...rest
-}) => {
+export const CardResponsiveCalendar: React.FC<CardResponsiveCalendarProps> = ({ header, height, ...rest }) => {
   return (
     <>
-      <Card>
-        <div>
-          <h2>{header}</h2>
-          <ResponsiveCalendar {...rest} />
-        </div>
+      <Card header={header} height={height}>
+        <ResponsiveCalendar {...rest} />
         <MarginLarge />
       </Card>
-      <style jsx>
-        {`
-          div {
-            height: ${cardHeight}px;
-            display: block;
-          }
-          h2 {
-            text-align: center;
-          }
-        `}
-      </style>
     </>
   );
 };
