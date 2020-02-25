@@ -7,7 +7,7 @@ export const AppContainer: React.FC = ({ children }) => {
       <style jsx>
         {`
           div {
-            max-width: 980px;
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
           }
