@@ -1,6 +1,7 @@
 import * as Nivo from '@nivo/bar';
 import * as React from 'react';
 import { Checker, CheckerFields, CheckerByWeekDay, CheckerByYear } from '../../interfaces/Checker';
+import { commonPropertiesBarComponent } from './commonProperties';
 
 type BarLayout = 'vertical' | 'horizontal';
 
@@ -12,22 +13,14 @@ export interface ResponsiveBarProps {
 }
 
 export const ResponsiveBar: React.FC<ResponsiveBarProps> = ({ checkers, layout = 'vertical', keys, indexBy }) => {
-  const commonProperties = {
+  const properties = {
+    ...commonPropertiesBarComponent,
     data: checkers,
     layout,
     keys,
     indexBy,
-    schema: 'nivo',
-    animate: true,
-    padding: 0.3,
-    margin: {
-      top: 50,
-      right: 50,
-      bottom: 50,
-      left: 50,
-    },
   };
-  return <Nivo.ResponsiveBar {...commonProperties} />;
+  return <Nivo.ResponsiveBar {...properties} />;
 };
 
 ResponsiveBar.displayName = 'ResponsiveBar';
