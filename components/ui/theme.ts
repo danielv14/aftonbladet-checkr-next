@@ -6,6 +6,10 @@ const margins = {
   small: `${marginSmall}px`,
 };
 
+const colors = {
+  brand: '#DD3836',
+};
+
 const card = {
   background: '#fff',
   borderRadius: '2px',
@@ -16,4 +20,5 @@ const card = {
 export const theme = {
   card,
   margins,
+  colors,
 };
