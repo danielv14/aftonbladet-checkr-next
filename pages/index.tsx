@@ -43,7 +43,7 @@ const IntroText: React.FC<IntroTextProps> = ({ fromYear, currentAmount }) => {
 
 const Index: NextPage<IndexPageProps> = ({ checkers, currentAmountOfCheckers }) => {
   const checkersCountByWeekday = groupCheckersByWeekDay(checkers);
-  const checkersSmall = [...checkers].splice(0, 15);
+  const checkersLatest = [...checkers].splice(0, 15);
   const checkersByYear = [...groupCheckersByYear(checkers).sort(sortCheckersByCreatedAsc)];
   return (
     <AppContainer>
@@ -58,7 +58,7 @@ const Index: NextPage<IndexPageProps> = ({ checkers, currentAmountOfCheckers }) 
       <CardResponsiveLine
         keys={[CheckerFields.amount]}
         indexBy={CheckerFields.created}
-        checkers={checkersSmall}
+        checkers={checkersLatest}
         header="De senaste dagarna"
       />
       <MarginLarge />
