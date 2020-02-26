@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Checker, CheckerFields } from '../../interfaces/Checker';
 import { sortCheckersByCreatedAsc } from '../../utils/sortCheckers';
 import { commonPropertiesLineComponent } from './commonProperties';
+import { theme } from '../ui/theme';
 
 const lineColor = 'hsl(192, 70%, 50%)';
 
@@ -48,7 +49,7 @@ export const ResponsiveLine: React.FC<ResponsiveLineProps> = ({ checkers }) => {
       data={data}
       xScale={{ type: 'point' }}
       yScale={{ type: 'linear', min: 'auto', max: 'auto', stacked: true, reverse: false }}
-      colors={{ scheme: 'nivo' }}
+      colors={theme.colors.brand}
       pointBorderColor={{ from: 'serieColor' }}
     />
   );

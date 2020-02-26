@@ -1,6 +1,7 @@
 import * as Nivo from '@nivo/calendar';
 import * as React from 'react';
 import { Checker, CheckerFields } from '../../interfaces/Checker';
+import { theme } from '../ui/theme';
 
 export interface ResponsiveCalendarProps {
   checkers: Checker[];
@@ -29,7 +30,7 @@ export const ResponsiveCalendar: React.FC<ResponsiveCalendarProps> = ({ checkers
       from={dateFrom}
       to={dateTo}
       emptyColor="#eeeeee"
-      colors={['#61cdbb', '#97e3d5', '#e8c1a0', '#f47560']}
+      colors={['#61cdbb', '#97e3d5', '#e8c1a0', theme.colors.brand]}
       margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
       yearSpacing={40}
       monthBorderColor="#ffffff"
