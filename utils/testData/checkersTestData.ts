@@ -4548,4 +4548,28 @@ export const checkersTestData: FirebaseChecker[] = [
     amount: 50,
     created: '2020-02-21 12:00:31',
   },
+  {
+    amount: 43,
+    created: '2020-02-22 12:01:07',
+  },
+  {
+    amount: 38,
+    created: '2020-02-23 12:00:44',
+  },
+  {
+    amount: 44,
+    created: '2020-02-24 12:00:22',
+  },
+  {
+    amount: 35,
+    created: '2020-02-25 12:00:15',
+  },
+  {
+    amount: 50,
+    created: '2020-02-26 12:01:05',
+  },
+  {
+    amount: 60,
+    created: '2020-02-27 12:00:12',
+  },
 ];
