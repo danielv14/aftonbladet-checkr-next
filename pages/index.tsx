@@ -69,14 +69,14 @@ const Index: NextPage<IndexPageProps> = ({ checkers, currentAmountOfCheckers }) 
         header="Per veckodag"
       />
       <MarginLarge />
+      <CardResponsiveCalendar height={750} checkers={checkers} header="Över sikt" />
+      <MarginLarge />
       <CardResponsiveBar
         keys={[CheckerFields.amount]}
         indexBy={CheckerFields.year}
         checkers={checkersByYear}
         header="Årsvis"
       />
-      <MarginLarge />
-      <CardResponsiveCalendar height={750} checkers={checkers} header="Över sikt" />
       <MarginLarge />
     </AppContainer>
   );
