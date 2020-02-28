@@ -48,7 +48,7 @@ const Index: NextPage<IndexPageProps> = ({ checkers, currentAmountOfCheckers }) 
   return (
     <AppContainer>
       <div style={{ textAlign: 'center' }}>
-        <AppHeader text="Aftonbladet Checkr" />
+        <AppHeader text="Aftonbladet Checker" />
         <IntroText
           fromYear={new Date(checkers[checkers.length - 1][CheckerFields.created]).getFullYear()}
           currentAmount={currentAmountOfCheckers}
