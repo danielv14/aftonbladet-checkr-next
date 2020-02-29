@@ -4,9 +4,10 @@
   "description": "Nuxt application to gather some fun information about aftonbladet articles",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start -p $PORT"
+    "dev": "next ./src",
+    "build": "next build ./src",
+    "start": "next start -p $PORT ./src",
+    "lint": "eslint ./src --ext .ts,.tsx"
   },
   "author": "daniel.verberg@gmail.com",
   "license": "ISC",
