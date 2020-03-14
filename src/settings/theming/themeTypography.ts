@@ -1,7 +1,7 @@
-export interface Typography {
+export interface ThemeTypography {
   fontBrand: string;
 }
 
-export const typography: Typography = {
+export const typography: ThemeTypography = {
   fontBrand: `'Bungee Shade', Arial, Helvetica, sans-serif`,
 };

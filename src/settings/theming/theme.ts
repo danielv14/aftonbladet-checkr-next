@@ -1,15 +1,15 @@
-import { margins, Margins } from './margins';
-import { colors, Colors } from './colors';
-import { card, Card } from './card';
-import { application, Application } from './application';
-import { typography, Typography } from './typography';
+import { margins, ThemeMargins } from './themeMargins';
+import { colors, ThemeColors } from './themeColors';
+import { card, ThemeCard } from './themeCard';
+import { application, ThemeApplication } from './themeApplication';
+import { typography, ThemeTypography } from './themeTypography';
 
 export interface Theme {
-  card: Card;
-  margins: Margins;
-  colors: Colors;
-  application: Application;
-  typography: Typography;
+  card: ThemeCard;
+  margins: ThemeMargins;
+  colors: ThemeColors;
+  application: ThemeApplication;
+  typography: ThemeTypography;
 }
 
 export const theme: Theme = {
