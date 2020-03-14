@@ -1,7 +1,7 @@
 import * as Nivo from '@nivo/calendar';
 import * as React from 'react';
 import { Checker, CheckerFields } from '../../interfaces/Checker';
-import { theme } from '../ui/theme';
+import { useTheme } from '../../hooks/useTheme';
 
 export interface ResponsiveCalendarProps {
   checkers: Checker[];
@@ -23,14 +23,14 @@ export const ResponsiveCalendar: React.FC<ResponsiveCalendarProps> = ({ checkers
 
   const dateTo = transformedCheckers[0].day;
   const dateFrom = transformedCheckers[transformedCheckers.length - 1].day;
-
+  const { colors } = useTheme();
   return (
     <Nivo.ResponsiveCalendar
       data={transformedCheckers}
       from={dateFrom}
       to={dateTo}
       emptyColor="#eeeeee"
-      colors={['#97e3d5', '#61cdbb', '#e8c1a0', theme.colors.brand]}
+      colors={['#97e3d5', '#61cdbb', '#e8c1a0', colors.brand]}
       margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
       yearSpacing={40}
       monthBorderColor="#ffffff"
