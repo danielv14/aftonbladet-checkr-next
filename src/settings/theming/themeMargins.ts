@@ -1,4 +1,4 @@
-export interface Margins {
+export interface ThemeMargins {
   large: string;
   small: string;
 }
@@ -6,7 +6,7 @@ export interface Margins {
 const marginLarge = 20;
 const marginSmall = marginLarge / 2;
 
-export const margins: Margins = {
+export const margins: ThemeMargins = {
   large: `${marginLarge}px`,
   small: `${marginSmall}px`,
 };

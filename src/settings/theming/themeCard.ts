@@ -1,11 +1,11 @@
-export interface Card {
+export interface ThemeCard {
   background: string;
   borderRadius: string;
   padding: string;
   boxShadow: string;
 }
 
-export const card: Card = {
+export const card: ThemeCard = {
   background: '#fff',
   borderRadius: '2px',
   padding: '16px',
