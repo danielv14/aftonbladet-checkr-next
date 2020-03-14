@@ -23,6 +23,7 @@
     "node_modules"
   ],
   "include": [
+    "theme.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"

@@ -1,8 +1,11 @@
+import { ThemeProps, DefaultTheme } from 'styled-components';
 import { margins, ThemeMargins } from './themeMargins';
 import { colors, ThemeColors } from './themeColors';
 import { card, ThemeCard } from './themeCard';
 import { application, ThemeApplication } from './themeApplication';
 import { typography, ThemeTypography } from './themeTypography';
+
+export type StyledTheme = ThemeProps<DefaultTheme>;
 
 export interface Theme {
   card: ThemeCard;
