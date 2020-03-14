@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { AppProps } from 'next/app';
 import '../assets/global.css';
+import { ThemeProvider } from 'styled-components';
 import Head from 'next/head';
+import { theme } from '../components/ui/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,7 +12,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Aftonbladet-Checker</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Component {...pageProps} />;
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />;
+      </ThemeProvider>
     </>
   );
 }
