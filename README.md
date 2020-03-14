@@ -23,4 +23,4 @@ When starting this project with `npm run dev` the `NODE.ENV` is set to developme
 
 ## Deployment
 
-Application is deployed through Heroku and a deployment is triggered each time something is pushed to the `master` branch. Travis CI is setup to lint and test build the application on each branch push - to catch bugs and proplems before they are auto-deployed to Heroku.
+Application is deployed through Heroku and a deployment is triggered each time something is pushed to the `master` branch. Travis CI is setup to lint and test build the application on each branch push - to catch bugs and problems before they are auto-deployed to Heroku.
