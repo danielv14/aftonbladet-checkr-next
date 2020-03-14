@@ -17,8 +17,13 @@ const card = {
   boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
 };
 
+const applicaton = {
+  maxWidth: '1200px',
+};
+
 export const theme = {
   card,
   margins,
   colors,
+  applicaton,
 };
