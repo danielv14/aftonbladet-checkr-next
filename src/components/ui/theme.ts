@@ -21,9 +21,14 @@ const applicaton = {
   maxWidth: '1200px',
 };
 
+const typography = {
+  fontBrand: `'Bungee Shade', Arial, Helvetica, sans-serif`,
+};
+
 export const theme = {
   card,
   margins,
   colors,
   applicaton,
+  typography,
 };

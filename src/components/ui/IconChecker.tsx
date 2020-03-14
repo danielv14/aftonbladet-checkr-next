@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { theme } from './theme';
 import styled from 'styled-components';
 
 const Checker = styled.span`
-  color: ${props => props.color};
+  color: ${({ theme }) => theme.colors.brand};
 `;
 
 export const IconChecker: React.FC = () => {
-  return <Checker color={theme.colors.brand}>&#10004;</Checker>;
+  return <Checker>&#10004;</Checker>;
 };
 
 IconChecker.displayName = 'IconChecker';

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { theme } from './theme';
 import styled from 'styled-components';
 
 export interface CardProps {
@@ -18,23 +17,18 @@ const CardContentWrapper = styled.div`
 `;
 
 const CardContainer = styled.div`
-  background: ${props => props.background};
-  border-radius: ${props => props.borderRadius};
-  padding: ${props => props.padding};
+  background: ${({ theme }) => theme.card.background};
+  border-radius: ${({ theme }) => theme.card.borderRadius};
+  padding: ${({ theme }) => theme.card.padding};
   position: relative;
   width: 100%;
-  box-shadow: ${props => props.boxShadow};
+  box-shadow: ${({ theme }) => theme.card.boxShadow};
 `;
 
 export const Card: React.FC<CardProps> = ({ height = 400, header, children }) => {
   const wrapperheight = `${height}px`;
   return (
-    <CardContainer
-      background={theme.card.background}
-      borderRadius={theme.card.borderRadius}
-      padding={theme.card.borderRadius}
-      boxShadow={theme.card.boxShadow}
-    >
+    <CardContainer>
       {header && <CardHeader>{header}</CardHeader>}
       <CardContentWrapper height={wrapperheight}>{children}</CardContentWrapper>
     </CardContainer>
