@@ -21,6 +21,6 @@ npm run lint            # Lint the entire project
 
 Application is deployed through Heroku and a deployment is triggered each time something is pushed to the `master` branch. Travis CI is setup to lint and test build the application on each branch push - to catch bugs and problems before they are auto-deployed to Heroku.
 
-## Testdata in development mode
+## Test data in development mode
 
-When starting this project with `npm run dev` the `NODE.ENV` is set to development. Since there is a limit for amount of requests to the firebase database for the free plan testdata will be used when starting the application in development. The testdata is located in `src/utils/testData/checkersTestData.ts` and is real data gathered from 2017 to early 2020 - gathered from the previous projects database. 
+When starting this project with `npm run dev` the `NODE.ENV` is set to development. Since there is a limit for amount of requests to the firebase database for the free plan test data will be used when starting the application in development mode. The test data is located in `src/utils/testData/checkersTestData.ts` and is real data gathered from 2017 to early 2020. 
