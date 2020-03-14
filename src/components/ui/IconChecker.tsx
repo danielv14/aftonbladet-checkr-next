@@ -1,19 +1,12 @@
 import * as React from 'react';
-import { theme } from './theme';
+import styled from 'styled-components';
+
+const Checker = styled.span`
+  color: ${({ theme }) => theme.colors.brand};
+`;
 
 export const IconChecker: React.FC = () => {
-  return (
-    <span className="checker">
-      &#10004;
-      <style jsx>
-        {`
-          .checker {
-            color: ${theme.colors.brand};
-          }
-        `}
-      </style>
-    </span>
-  );
+  return <Checker>&#10004;</Checker>;
 };
 
 IconChecker.displayName = 'IconChecker';

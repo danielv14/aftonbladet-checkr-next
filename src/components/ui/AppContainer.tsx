@@ -1,18 +1,12 @@
 import * as React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  max-width: ${({ theme }) => theme.application.maxWidth};
+  width: 100%;
+  margin: 0 auto;
+`;
 
 export const AppContainer: React.FC = ({ children }) => {
-  return (
-    <div>
-      {children}
-      <style jsx>
-        {`
-          div {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-          }
-        `}
-      </style>{' '}
-    </div>
-  );
+  return <Container>{children}</Container>;
 };

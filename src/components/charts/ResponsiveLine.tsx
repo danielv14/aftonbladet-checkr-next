@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Checker, CheckerFields } from '../../interfaces/Checker';
 import { sortCheckersByCreatedAsc } from '../../utils/sortCheckers';
 import { commonPropertiesLineComponent } from './commonProperties';
-import { theme } from '../ui/theme';
+import { useTheme } from '../../hooks/useTheme';
 
 const lineColor = 'hsl(192, 70%, 50%)';
 
@@ -43,13 +43,14 @@ export interface ResponsiveLineProps {
 export const ResponsiveLine: React.FC<ResponsiveLineProps> = ({ checkers }) => {
   const sortedCheckers = checkers.sort(sortCheckersByCreatedAsc);
   const data = transformCheckerDataToLineData(sortedCheckers);
+  const { colors } = useTheme();
   return (
     <Nivo.ResponsiveLine
       {...commonPropertiesLineComponent}
       data={data}
       xScale={{ type: 'point' }}
       yScale={{ type: 'linear', min: 'auto', max: 'auto', stacked: true, reverse: false }}
-      colors={theme.colors.brand}
+      colors={colors.brand}
       pointBorderColor={{ from: 'serieColor' }}
     />
   );

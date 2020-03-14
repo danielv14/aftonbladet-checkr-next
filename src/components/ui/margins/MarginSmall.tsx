@@ -1,4 +1,7 @@
 import * as React from 'react';
-import { theme } from '../theme';
+import { useTheme } from '../../../hooks/useTheme';
 
-export const MarginSmall = () => <div style={{ margin: theme.margins.small }}></div>;
+export const MarginLarge = () => {
+  const { margins } = useTheme();
+  return <div style={{ margin: margins.small }}></div>;
+};
