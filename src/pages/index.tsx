@@ -13,6 +13,8 @@ import { sortCheckersByCreatedAsc } from '../utils/sortCheckers';
 import { AppHeader } from '../components/ui/AppHeader';
 import { IconChecker } from '../components/ui/IconChecker';
 import * as requester from '../utils/requester';
+import { groupCheckersByQuarter } from '../utils/groupCheckersByQuarter';
+import { CardResponsivePie } from '../components/charts/cards/CardResponsivePie';
 
 interface IndexPageProps {
   checkers: Checker[];
@@ -45,6 +47,8 @@ const Index: NextPage<IndexPageProps> = ({ checkers, currentAmountOfCheckers }) 
   const checkersCountByWeekday = groupCheckersByWeekDay(checkers);
   const checkersLatest = [...checkers].splice(0, 15);
   const checkersByYear = [...groupCheckersByYear(checkers).sort(sortCheckersByCreatedAsc)];
+  const checkersByQuarter = groupCheckersByQuarter(checkers);
+
   return (
     <AppContainer>
       <div style={{ textAlign: 'center' }}>
@@ -70,6 +74,8 @@ const Index: NextPage<IndexPageProps> = ({ checkers, currentAmountOfCheckers }) 
       />
       <MarginLarge />
       <CardResponsiveCalendar height={750} checkers={checkers} header="Över sikt" />
+      <MarginLarge />
+      <CardResponsivePie header="Kvartalsvis" checkers={checkersByQuarter}></CardResponsivePie>
       <MarginLarge />
       <CardResponsiveBar
         keys={[CheckerFields.amount]}
