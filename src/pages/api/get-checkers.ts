@@ -9,6 +9,6 @@ interface GetCheckersResponse {
 }
 
 export default async (_req: NextApiRequest, res: NextApiResponse<GetCheckersResponse>) => {
-  const data = isDevelopment() ? await testDataAsCheckerDTO() : await getAllEntries();
+  const data = isDevelopment ? await testDataAsCheckerDTO() : await getAllEntries();
   res.status(200).json({ checkers: data });
 };
