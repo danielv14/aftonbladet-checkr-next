@@ -1,2 +1,3 @@
-export const validFirebaseApiKey = (key: string | string[]): boolean =>
-  key ? key === process.env.FIREBASE_API_KEY : false;
+import { firebaseConfig } from '../lib/firebase/config';
+
+export const validFirebaseApiKey = (key: string | string[]): boolean => (key ? key === firebaseConfig.apiKey : false);
