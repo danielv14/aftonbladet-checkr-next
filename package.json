@@ -15,6 +15,7 @@
     "@nivo/bar": "^0.61.1",
     "@nivo/calendar": "^0.61.1",
     "@nivo/line": "^0.61.1",
+    "@nivo/pie": "^0.61.1",
     "cheerio": "^1.0.0-rc.3",
     "date-fns": "^2.9.0",
     "dateformat": "^3.0.3",

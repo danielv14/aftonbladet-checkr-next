@@ -18,3 +18,17 @@ export const commonPropertiesBarComponent = {
   animate: true,
   padding: 0.3,
 };
+
+export const commonPropertiesPieComponent = {
+  ...commonProperties,
+  margin: {
+    top: 40,
+    right: 80,
+    bottom: 80,
+    left: 80,
+  },
+  padAngle: 0.7,
+  innerRadius: 0.5,
+  radialLabelsTextColor: '#333333',
+  slicesLabelsTextColor: '#333333',
+};

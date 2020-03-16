@@ -32,6 +32,12 @@ export interface CheckerByYear extends CheckerBase {
   [CheckerFields.year]: string;
 }
 
+export interface CheckersByQuarter {
+  id: string;
+  label: string;
+  value: number;
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const isChecker = (object: any): object is Checker => CheckerFields.created in object;
 
