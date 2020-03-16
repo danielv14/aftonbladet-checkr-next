@@ -3,18 +3,19 @@ import absoluteUrl from 'next-absolute-url';
 import { Checker, CheckerFields } from '../interfaces/Checker';
 import { NextPage } from 'next';
 import { AppContainer } from '../components/ui/AppContainer';
-import { CardResponsiveBar } from '../components/charts/cards/CardResponsiveBar';
 import { MarginLarge } from '../components/ui/margins/MarginLarge';
 import { groupCheckersByWeekDay } from '../utils/groupCheckersByWeekDay';
 import { groupCheckersByYear } from '../utils/groupCheckersByYear';
-import { CardResponsiveLine } from '../components/charts/cards/CardResponsiveLine';
-import { CardResponsiveCalendar } from '../components/charts/cards/CardResponsiveCalendar';
 import { sortCheckersByCreatedAsc } from '../utils/sortCheckers';
 import { AppHeader } from '../components/ui/AppHeader';
 import { IconChecker } from '../components/ui/IconChecker';
 import * as requester from '../utils/requester';
 import { groupCheckersByQuarter } from '../utils/groupCheckersByQuarter';
-import { CardResponsivePie } from '../components/charts/cards/CardResponsivePie';
+import { ResponsiveLine } from '../components/charts/ResponsiveLine';
+import { Card } from '../components/ui/Card';
+import { ResponsiveBar } from '../components/charts/ResponsiveBar';
+import { ResponsiveCalendar } from '../components/charts/ResponsiveCalendar';
+import { ResponsivePie } from '../components/charts/ResponsivePie';
 
 interface IndexPageProps {
   checkers: Checker[];
@@ -59,30 +60,30 @@ const Index: NextPage<IndexPageProps> = ({ checkers, currentAmountOfCheckers }) 
         />
       </div>
       <MarginLarge />
-      <CardResponsiveLine
-        keys={[CheckerFields.amount]}
-        indexBy={CheckerFields.created}
-        checkers={checkersLatest}
-        header="De senaste dagarna"
-      />
+      <Card header="De senaste dagarna">
+        <ResponsiveLine keys={[CheckerFields.amount]} indexBy={CheckerFields.created} checkers={checkersLatest} />
+        <MarginLarge />
+      </Card>
       <MarginLarge />
-      <CardResponsiveBar
-        keys={[CheckerFields.amount]}
-        indexBy={CheckerFields.day}
-        checkers={checkersCountByWeekday}
-        header="Per veckodag"
-      />
+      <Card header="Per veckodag">
+        <ResponsiveBar keys={[CheckerFields.amount]} indexBy={CheckerFields.day} checkers={checkersCountByWeekday} />
+        <MarginLarge />
+      </Card>
       <MarginLarge />
-      <CardResponsiveCalendar height={750} checkers={checkers} header="Över sikt" />
+      <Card header="Över tid" height={750}>
+        <ResponsiveCalendar checkers={checkers} />
+        <MarginLarge />
+      </Card>
       <MarginLarge />
-      <CardResponsivePie header="Kvartalsvis" checkers={checkersByQuarter}></CardResponsivePie>
+      <Card header="Kvartalsvis">
+        <ResponsivePie checkers={checkersByQuarter} />
+        <MarginLarge />
+      </Card>
       <MarginLarge />
-      <CardResponsiveBar
-        keys={[CheckerFields.amount]}
-        indexBy={CheckerFields.year}
-        checkers={checkersByYear}
-        header="Årsvis"
-      />
+      <Card header="Årsvis">
+        <ResponsiveBar keys={[CheckerFields.amount]} indexBy={CheckerFields.year} checkers={checkersByYear} />
+        <MarginLarge />
+      </Card>
       <MarginLarge />
     </AppContainer>
   );
