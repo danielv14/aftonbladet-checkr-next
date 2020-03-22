@@ -9,7 +9,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const currentEntryForToday = await getLatestEntry();
     if (currentEntryForToday && isToday(new Date(currentEntryForToday.created))) {
-      res.status(200).json({ status: 200, message: `Todays checkers has already been added into db` });
+      res.status(200).json({ status: 200, message: `Today's checkers has already been added into db` });
       return;
     }
 
