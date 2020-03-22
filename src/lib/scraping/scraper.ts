@@ -1,11 +1,12 @@
 import fetch from 'isomorphic-unfetch';
-import { getAmountOfCheckers } from './findCheckers';
+import { getTargetAmount } from './scrapeTargetAmount';
+import { CHECKER_CLASS } from './scrapeTarget';
 
 export const SCRAPING_URL = 'https://www.aftonbladet.se/';
 
 export const scrapeForCurrentCheckers = async () => {
   const res = await fetch(SCRAPING_URL);
   const data = await res.text();
-  const amountOfCheckers = getAmountOfCheckers(data);
+  const amountOfCheckers = getTargetAmount(data, CHECKER_CLASS);
   return amountOfCheckers;
 };
