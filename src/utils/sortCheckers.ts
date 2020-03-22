@@ -3,16 +3,12 @@ import { Checker, CheckerFields, CheckerByYear, isChecker, isCheckerByYear } fro
 
 type CheckerToSort = Checker | CheckerByYear;
 
-const now = new Date();
-
 const dateField = (checker: Checker | CheckerByYear) => {
-  if (isChecker(checker)) {
-    return new Date(checker[CheckerFields.created]);
-  }
-  if (isCheckerByYear(checker)) {
-    return new Date(checker[CheckerFields.year]);
-  }
-  return now;
+  return isChecker(checker)
+    ? new Date(checker[CheckerFields.created])
+    : isCheckerByYear(checker)
+    ? new Date(checker[CheckerFields.year])
+    : new Date();
 };
 
 export const sortCheckersByCreatedAsc = (checkerLeft: CheckerToSort, checkerRight: CheckerToSort) =>
