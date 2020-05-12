@@ -1,8 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { deleteAllEntriesFromDB } from '../../../lib/firebase/actions';
 import { validFirebaseApiKey } from '../../../utils/validApiKey';
+import { withAuthorization } from '../../../middlewares/authorizationMiddleware';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const requestHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (validFirebaseApiKey(req.query.apiKey)) {
     try {
       await deleteAllEntriesFromDB();
@@ -15,3 +16,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(404).json({ status: 401 });
   }
 };
+
+export default withAuthorization(requestHandler);
