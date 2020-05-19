@@ -1,6 +1,6 @@
 import { checkersCollection } from './db';
 import { toFireStoreDocData, deleteQueryBatch } from './utils';
-import { CheckerDTO, FirebaseChecker } from '../../interfaces/Checker';
+import { CheckerDto, FirebaseChecker } from '../../interfaces/Checker';
 
 // Firestore can only perform batch operations or max 500 documents at once
 const BATCH_LIMIT = 500;
@@ -12,7 +12,7 @@ export const getAllEntries = async () => {
     return checkers;
   } catch (err) {
     console.log('Error getting documents', err);
-    return [] as CheckerDTO[];
+    return [] as CheckerDto[];
   }
 };
 

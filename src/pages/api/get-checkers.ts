@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getAllEntries } from '../../lib/firebase/actions';
-import { CheckerDTO } from '../../interfaces/Checker';
+import { CheckerDto } from '../../interfaces/Checker';
 import { testDataAsCheckerDTO } from '../../utils/testData/checkersTestData';
 import { isDevelopment } from '../../utils/isEnvironment';
 
 interface GetCheckersResponse {
-  checkers: CheckerDTO[];
+  checkers: CheckerDto[];
 }
 
 export default async (_req: NextApiRequest, res: NextApiResponse<GetCheckersResponse>) => {

@@ -5,7 +5,7 @@ export interface FirebaseChecker {
   created: string;
 }
 
-export interface CheckerDTO extends FirebaseChecker {
+export interface CheckerDto extends FirebaseChecker {
   id: string;
 }
 

@@ -1,4 +1,4 @@
-import { CheckerDTO, FirebaseChecker } from '../../interfaces/Checker';
+import { CheckerDto, FirebaseChecker } from '../../interfaces/Checker';
 import { checkersTestData } from '../../utils/testData/checkersTestData';
 import { addEntryToDB } from './actions';
 
@@ -8,9 +8,9 @@ export const seedDBWithTestdata = async (fullSeed = false) => {
   let seedData = ([
     randomSeedChecker(checkersTestData),
     randomSeedChecker(checkersTestData),
-  ] as unknown) as CheckerDTO[];
+  ] as unknown) as CheckerDto[];
   if (fullSeed) {
-    seedData = checkersTestData as CheckerDTO[];
+    seedData = checkersTestData as CheckerDto[];
   }
   const promises = seedData.map(addEntryToDB);
   return Promise.all(promises);
