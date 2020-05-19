@@ -1,15 +1,13 @@
-import fetch from 'isomorphic-unfetch';
 import { Checker, CheckerDto } from '../interfaces/Checker';
 import { fromCheckerDto } from './mappings/checker';
+import { fetcher } from './fetcher';
 
-const fetcher = async <T>(url: string): Promise<T> => {
-  const res = await fetch(url);
-  const data = await res.json();
-  return data;
-};
+interface CheckerResponse {
+  checkers: CheckerDto[];
+}
 
 export const getAllCheckers = async (origin: string): Promise<Checker[]> => {
-  const { checkers } = await fetcher<{ checkers: CheckerDto[] }>(`${origin}/api/get-checkers`);
+  const { checkers } = await fetcher<CheckerResponse>(`${origin}/api/get-checkers`);
   return checkers.map(fromCheckerDto) as Checker[];
 };
 
