@@ -1,7 +1,7 @@
-import { Checker, CheckerFields, CheckersByQuarter } from '../interfaces/Checker';
+import { Checker, CheckerFields, CheckersByQuarter } from '../../interfaces/Checker';
 import { getQuarter } from 'date-fns';
-import { getCheckersTotalAmount } from './calculateAmount';
-import { Quarter } from '../interfaces/Quarter';
+import { getCheckersTotalAmount } from '../calculateAmount';
+import { Quarter } from '../../interfaces/Quarter';
 
 export const groupCheckersByQuarter = (checkers: Checker[]): CheckersByQuarter[] => {
   const quarters = [

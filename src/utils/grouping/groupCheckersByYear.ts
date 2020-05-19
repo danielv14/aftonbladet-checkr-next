@@ -1,6 +1,6 @@
-import { Checker, CheckerFields, CheckerByYear } from '../interfaces/Checker';
+import { Checker, CheckerFields, CheckerByYear } from '../../interfaces/Checker';
 import { getYear } from 'date-fns';
-import { getCheckersTotalAmount } from './calculateAmount';
+import { getCheckersTotalAmount } from '../calculateAmount';
 
 export const groupCheckersByYear = (checkers: Checker[]): CheckerByYear[] => {
   const years = getYearSpan(checkers);
