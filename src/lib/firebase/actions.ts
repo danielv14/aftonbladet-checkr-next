@@ -1,6 +1,7 @@
 import { checkersCollection } from './db';
-import { toFireStoreDocData, deleteQueryBatch } from './utils';
+import { deleteQueryBatch } from './utils';
 import { CheckerDto, FirebaseChecker } from '../../interfaces/Checker';
+import { fromFireStoreDocData } from '../../utils/mappings/checkerDto';
 
 // Firestore can only perform batch operations or max 500 documents at once
 const BATCH_LIMIT = 500;
@@ -8,7 +9,7 @@ const BATCH_LIMIT = 500;
 export const getAllEntries = async () => {
   try {
     const querySnapshot = await checkersCollection.orderBy('created', 'desc').get();
-    const checkers = querySnapshot.docs.map(toFireStoreDocData);
+    const checkers = querySnapshot.docs.map(fromFireStoreDocData);
     return checkers;
   } catch (err) {
     console.log('Error getting documents', err);
@@ -21,7 +22,7 @@ export const getLatestEntry = async () => {
     .orderBy('created', 'desc')
     .limit(1)
     .get();
-  const checkers = querySnapshot.docs.map(toFireStoreDocData);
+  const checkers = querySnapshot.docs.map(fromFireStoreDocData);
   return checkers[0];
 };
 

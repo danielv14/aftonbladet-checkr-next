@@ -1,12 +1,5 @@
 import * as firebase from 'firebase';
-import { CheckerDto } from '../../interfaces/Checker';
 import { db } from './db';
-
-type documentData = firebase.firestore.QueryDocumentSnapshot<firebase.firestore.DocumentData>;
-
-export const toFireStoreDocData = (doc: documentData): CheckerDto => {
-  return { id: doc.id, amount: doc.data().amount, created: doc.data().created };
-};
 
 export const deleteQueryBatch = async (
   query: firebase.firestore.Query<firebase.firestore.DocumentData>,

@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-unfetch';
 import { Checker, CheckerDto } from '../interfaces/Checker';
-import { checkerDtoToChecker } from './dtoCheckers';
+import { fromCheckerDto } from './mappings/checker';
 
 const fetcher = async <T>(url: string): Promise<T> => {
   const res = await fetch(url);
@@ -10,7 +10,7 @@ const fetcher = async <T>(url: string): Promise<T> => {
 
 export const getAllCheckers = async (origin: string): Promise<Checker[]> => {
   const { checkers } = await fetcher<{ checkers: CheckerDto[] }>(`${origin}/api/get-checkers`);
-  return checkers.map(checkerDtoToChecker) as Checker[];
+  return checkers.map(fromCheckerDto) as Checker[];
 };
 
 export const getCurrentAmountOfCheckers = async (origin: string): Promise<number> => {
