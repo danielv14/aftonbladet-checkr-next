@@ -1,6 +1,6 @@
 import { CheckerDto, FirebaseChecker } from '../../interfaces/Checker';
 import { checkersTestData } from '../../utils/testData/checkersTestData';
-import { addEntryToDB } from './actions';
+import { addCheckerToDb } from './actions';
 
 const randomSeedChecker = (seed: FirebaseChecker[]) => seed[Math.floor(Math.random() * seed.length)];
 
@@ -12,6 +12,6 @@ export const seedDBWithTestdata = async (fullSeed = false) => {
   if (fullSeed) {
     seedData = checkersTestData as CheckerDto[];
   }
-  const promises = seedData.map(addEntryToDB);
+  const promises = seedData.map(addCheckerToDb);
   return Promise.all(promises);
 };

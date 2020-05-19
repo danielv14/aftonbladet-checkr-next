@@ -26,7 +26,7 @@ export const getLatestEntry = async () => {
   return checkers[0];
 };
 
-export const addEntryToDB = (entry: FirebaseChecker) => checkersCollection.add(entry);
+export const addCheckerToDb = (entry: FirebaseChecker) => checkersCollection.add(entry);
 
 export const deleteAllEntriesFromDB = () => {
   const query = checkersCollection.orderBy('created').limit(BATCH_LIMIT);
