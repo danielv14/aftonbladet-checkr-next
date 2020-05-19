@@ -9,7 +9,7 @@ import { groupCheckersByYear } from '../utils/grouping/groupCheckersByYear';
 import { sortCheckersByCreatedAsc } from '../utils/sortCheckers';
 import { AppHeader } from '../components/ui/AppHeader';
 import { IconChecker } from '../components/ui/IconChecker';
-import * as requester from '../utils/requester';
+import * as checkerRequester from '../utils/checkerRequester';
 import { groupCheckersByQuarter } from '../utils/grouping/groupCheckersByQuarter';
 import { ResponsiveLine } from '../components/charts/ResponsiveLine';
 import { Card } from '../components/ui/Card';
@@ -91,8 +91,10 @@ const Index: NextPage<IndexPageProps> = ({ checkers, currentAmountOfCheckers }) 
 
 Index.getInitialProps = async context => {
   const { origin } = absoluteUrl(context.req);
-  const checkers = await requester.getAllCheckers(origin);
-  const currentAmount = await requester.getCurrentAmountOfCheckers(origin);
+  const [checkers, currentAmount] = await Promise.all([
+    checkerRequester.getAllCheckers(origin),
+    checkerRequester.getCurrentAmountOfCheckers(origin),
+  ]);
 
   return {
     checkers,
