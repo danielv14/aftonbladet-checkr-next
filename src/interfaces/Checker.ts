@@ -5,7 +5,7 @@ export interface FirebaseChecker {
   created: string;
 }
 
-export interface CheckerDTO extends FirebaseChecker {
+export interface CheckerDto extends FirebaseChecker {
   id: string;
 }
 
@@ -24,11 +24,11 @@ export interface Checker extends CheckerBase {
   [CheckerFields.created]: string;
 }
 
-export interface CheckerByWeekDay extends CheckerBase {
+export interface CheckerWeekDay extends CheckerBase {
   [CheckerFields.day]: Weekday;
 }
 
-export interface CheckerByYear extends CheckerBase {
+export interface CheckerYear extends CheckerBase {
   [CheckerFields.year]: string;
 }
 
@@ -42,4 +42,4 @@ export interface CheckersByQuarter {
 export const isChecker = (object: any): object is Checker => CheckerFields.created in object;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const isCheckerByYear = (object: any): object is CheckerByYear => CheckerFields.year in object;
+export const isCheckerByYear = (object: any): object is CheckerYear => CheckerFields.year in object;

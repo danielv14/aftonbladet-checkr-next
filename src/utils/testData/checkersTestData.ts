@@ -1,4 +1,4 @@
-import { FirebaseChecker, CheckerDTO } from '../../interfaces/Checker';
+import { FirebaseChecker, CheckerDto } from '../../interfaces/Checker';
 
 export const testDataAsCheckerDTO = async () =>
   checkersTestData
@@ -7,7 +7,7 @@ export const testDataAsCheckerDTO = async () =>
         amount: data.amount,
         created: data.created,
         id: `${index}`,
-      } as CheckerDTO;
+      } as CheckerDto;
     })
     .reverse();
 

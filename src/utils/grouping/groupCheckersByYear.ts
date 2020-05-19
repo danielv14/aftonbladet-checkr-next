@@ -1,8 +1,8 @@
-import { Checker, CheckerFields, CheckerByYear } from '../interfaces/Checker';
+import { Checker, CheckerFields, CheckerYear } from '../../interfaces/Checker';
 import { getYear } from 'date-fns';
-import { getCheckersTotalAmount } from './calculateAmount';
+import { getCheckersTotalAmount } from '../calculateAmount';
 
-export const groupCheckersByYear = (checkers: Checker[]): CheckerByYear[] => {
+export const groupCheckersByYear = (checkers: Checker[]): CheckerYear[] => {
   const years = getYearSpan(checkers);
   const data = years.map(year => {
     const checkersByYear = checkers.filter(checker => filterCheckersByYear(checker, year));
@@ -10,7 +10,7 @@ export const groupCheckersByYear = (checkers: Checker[]): CheckerByYear[] => {
     return {
       [CheckerFields.year]: `${year}`,
       [CheckerFields.amount]: amount,
-    } as CheckerByYear;
+    } as CheckerYear;
   });
   return data;
 };

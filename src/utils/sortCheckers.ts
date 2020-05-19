@@ -1,9 +1,9 @@
 import { compareAsc, compareDesc } from 'date-fns';
-import { Checker, CheckerFields, CheckerByYear, isChecker, isCheckerByYear } from '../interfaces/Checker';
+import { Checker, CheckerFields, CheckerYear, isChecker, isCheckerByYear } from '../interfaces/Checker';
 
-type CheckerToSort = Checker | CheckerByYear;
+type CheckerToSort = Checker | CheckerYear;
 
-const dateField = (checker: Checker | CheckerByYear) => {
+const dateField = (checker: Checker | CheckerYear) => {
   return isChecker(checker)
     ? new Date(checker[CheckerFields.created])
     : isCheckerByYear(checker)

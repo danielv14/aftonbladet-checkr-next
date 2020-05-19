@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getLatestEntry } from '../lib/firebase/actions';
 import { isToday } from 'date-fns';
-import { CheckerDTO } from '../interfaces/Checker';
+import { CheckerDto } from '../interfaces/Checker';
 
-const isTodaysCheckersLogged = (latestChecker: CheckerDTO) => latestChecker && isToday(new Date(latestChecker.created));
+const isTodaysCheckersLogged = (latestChecker: CheckerDto) => latestChecker && isToday(new Date(latestChecker.created));
 
 export const withTodayAlreadyScraped = (handler: Function) => async (req: NextApiRequest, res: NextApiResponse) => {
   try {

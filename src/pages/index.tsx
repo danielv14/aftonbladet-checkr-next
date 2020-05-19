@@ -4,13 +4,13 @@ import { Checker, CheckerFields } from '../interfaces/Checker';
 import { NextPage } from 'next';
 import { AppContainer } from '../components/ui/AppContainer';
 import { MarginLarge } from '../components/ui/margins/MarginLarge';
-import { groupCheckersByWeekDay } from '../utils/groupCheckersByWeekDay';
-import { groupCheckersByYear } from '../utils/groupCheckersByYear';
+import { groupCheckersByWeekDay } from '../utils/grouping/groupCheckersByWeekDay';
+import { groupCheckersByYear } from '../utils/grouping/groupCheckersByYear';
 import { sortCheckersByCreatedAsc } from '../utils/sortCheckers';
 import { AppHeader } from '../components/ui/AppHeader';
 import { IconChecker } from '../components/ui/IconChecker';
-import * as requester from '../utils/requester';
-import { groupCheckersByQuarter } from '../utils/groupCheckersByQuarter';
+import * as checkerRequester from '../utils/checkerRequester';
+import { groupCheckersByQuarter } from '../utils/grouping/groupCheckersByQuarter';
 import { ResponsiveLine } from '../components/charts/ResponsiveLine';
 import { Card } from '../components/ui/Card';
 import { ResponsiveBar } from '../components/charts/ResponsiveBar';
@@ -91,8 +91,10 @@ const Index: NextPage<IndexPageProps> = ({ checkers, currentAmountOfCheckers }) 
 
 Index.getInitialProps = async context => {
   const { origin } = absoluteUrl(context.req);
-  const checkers = await requester.getAllCheckers(origin);
-  const currentAmount = await requester.getCurrentAmountOfCheckers(origin);
+  const [checkers, currentAmount] = await Promise.all([
+    checkerRequester.getAllCheckers(origin),
+    checkerRequester.getCurrentAmountOfCheckers(origin),
+  ]);
 
   return {
     checkers,
