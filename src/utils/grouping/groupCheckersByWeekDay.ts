@@ -1,8 +1,8 @@
 import { isMonday, isTuesday, isWednesday, isThursday, isFriday, isSaturday, isSunday } from 'date-fns';
-import { Checker, CheckerByWeekDay, CheckerFields } from '../../interfaces/Checker';
+import { Checker, CheckerWeekDay, CheckerFields } from '../../interfaces/Checker';
 import { Weekday } from '../../interfaces/Weekdays';
 
-export const groupCheckersByWeekDay = (checkers: Checker[]): CheckerByWeekDay[] => {
+export const groupCheckersByWeekDay = (checkers: Checker[]): CheckerWeekDay[] => {
   let countMonday = 0;
   let countTuesday = 0;
   let countWednesday = 0;
