@@ -1,9 +1,9 @@
 import { getTargetAmount } from './scrapeTargetAmount';
-import { fetchAftonbladetText } from './scrapeRequester';
-import { SCRAPING_TARGET } from './config';
+import { scrapeForText } from './scrapeRequester';
+import { SCRAPING_TARGET, SCRAPING_URL } from './config';
 
 export const scrapeForCurrentCheckers = async () => {
-  const htmlString = await fetchAftonbladetText();
+  const htmlString = await scrapeForText(SCRAPING_URL);
   const amountOfCheckers = getTargetAmount(htmlString, SCRAPING_TARGET);
   return amountOfCheckers;
 };
