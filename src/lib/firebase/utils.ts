@@ -1,5 +1,11 @@
 import * as firebase from 'firebase';
 import { db } from './db';
+import { FirebaseChecker } from '../../interfaces/Checker';
+import { checkersTestData } from '../../utils/testData/checkersTestData';
+
+export const getFixedSizeOfSeeds = (size: number): FirebaseChecker[] => new Array(size).fill(pluckRandomSeed);
+
+const pluckRandomSeed = () => checkersTestData[Math.floor(Math.random() * checkersTestData.length)];
 
 export const deleteQueryBatch = async (
   query: firebase.firestore.Query<firebase.firestore.DocumentData>,
