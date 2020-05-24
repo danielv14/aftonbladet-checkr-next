@@ -1,6 +1,5 @@
 import fetch from 'isomorphic-unfetch';
-
-export const SCRAPING_URL = 'https://www.aftonbladet.se/';
+import { SCRAPING_URL } from './config';
 
 export const fetchAftonbladetText = async () => {
   try {
