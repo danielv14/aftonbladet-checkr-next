@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { scrapeForCurrentCheckers } from '../../lib/scraping/scraper';
-import { SCRAPING_URL } from '../../lib/scraping/scrapeRequester';
+import { SCRAPING_URL } from '../../lib/scraping/config';
 
 interface CurrentCheckersResponse {
   current: number;

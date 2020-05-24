@@ -1,14 +1,12 @@
 import fetch from 'isomorphic-unfetch';
 
-export const SCRAPING_URL = 'https://www.aftonbladet.se/';
-
-export const fetchAftonbladetText = async () => {
+export const scrapeForText = async (url: string): Promise<string> => {
   try {
-    const res = await fetch(SCRAPING_URL);
+    const res = await fetch(url);
     const data = await res.text();
     return data;
   } catch (error) {
-    console.error(`Failed to fetch target url ${SCRAPING_URL}`, error);
+    console.error(`Failed to fetch target url ${url}`, error);
     return '';
   }
 };
