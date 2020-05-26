@@ -1,4 +1,4 @@
-# Aftonbladet-checker-nuxt
+# Aftonbladet-checker-next
 
 This is small Next.js (React) application that scapes Aftonbladet.se everyday - and has been since 2017 - for some silly information. This information is stored on Google Firebase and displayed on this site in different charts.
 
