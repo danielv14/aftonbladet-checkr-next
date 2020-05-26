@@ -1,5 +1,5 @@
 {
-  "name": "aftonbladet-checker-nuxt",
+  "name": "aftonbladet-checker-next",
   "version": "1.0.0",
   "description": "Nuxt application to gather some fun information about aftonbladet articles",
   "main": "index.js",
