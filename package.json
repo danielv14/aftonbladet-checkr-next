@@ -1,7 +1,7 @@
 {
   "name": "aftonbladet-checker-next",
   "version": "1.0.0",
-  "description": "Nuxt application to gather some fun information about aftonbladet articles",
+  "description": "Next.js application to gather some fun information about aftonbladet articles",
   "main": "index.js",
   "scripts": {
     "dev": "next ./src",
