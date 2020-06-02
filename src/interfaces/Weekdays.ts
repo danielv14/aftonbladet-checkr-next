@@ -7,3 +7,23 @@ export enum Weekday {
   saturday = 'Lördag',
   sunday = 'Söndag',
 }
+
+export enum WeekdayNumberUS {
+  Sunday = 0,
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+}
+
+export enum WeekdayNumber {
+  Monday = 0,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday,
+}

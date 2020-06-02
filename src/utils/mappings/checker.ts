@@ -1,4 +1,4 @@
-import { CheckerDto, Checker, CheckerFields } from '../../interfaces/Checker';
+import { Checker, CheckerDto, CheckerFields } from '../../interfaces/Checker';
 import { getDateWithoutTime } from '../getCurrentDate';
 
 export const fromCheckerDto = (checker: CheckerDto): Checker => {
