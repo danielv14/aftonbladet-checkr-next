@@ -49,7 +49,7 @@ export const ResponsiveLine: React.FC<ResponsiveLineProps> = ({ checkers }) => {
       {...commonPropertiesLineComponent}
       data={data}
       xScale={{ type: 'point' }}
-      yScale={{ type: 'linear', min: 'auto', max: 'auto', stacked: true, reverse: false }}
+      yScale={{ type: 'linear', min: 0, max: 'auto', stacked: true, reverse: false }}
       colors={colors.brand}
       pointBorderColor={{ from: 'serieColor' }}
     />
