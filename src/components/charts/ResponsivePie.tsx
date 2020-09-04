@@ -2,7 +2,7 @@ import * as Nivo from '@nivo/pie';
 import * as React from 'react';
 import { CheckersByQuarter } from '../../interfaces/Checker';
 import { PieDatum } from '@nivo/pie';
-import { commonPropertiesPieComponent } from './commonProperties';
+import { commonPropertiesPieComponent } from '../../settings/chart/commonProperties';
 
 export interface ResponsivePieProps {
   checkers: CheckersByQuarter[];

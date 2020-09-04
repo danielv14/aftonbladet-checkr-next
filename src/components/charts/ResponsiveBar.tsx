@@ -1,7 +1,7 @@
 import * as Nivo from '@nivo/bar';
 import * as React from 'react';
 import { Checker, CheckerFields, CheckerWeekDay, CheckerYear } from '../../interfaces/Checker';
-import { commonPropertiesBarComponent } from './commonProperties';
+import { commonPropertiesBarComponent } from '../../settings/chart/commonProperties';
 import { useTheme } from '../../hooks/useTheme';
 
 type BarLayout = 'vertical' | 'horizontal';

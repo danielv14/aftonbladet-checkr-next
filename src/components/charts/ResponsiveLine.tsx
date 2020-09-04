@@ -2,37 +2,9 @@ import * as Nivo from '@nivo/line';
 import * as React from 'react';
 import { Checker, CheckerFields } from '../../interfaces/Checker';
 import { sortCheckersByCreatedAsc } from '../../utils/sortCheckers';
-import { commonPropertiesLineComponent } from './commonProperties';
+import { commonPropertiesLineComponent } from '../../settings/chart/commonProperties';
 import { useTheme } from '../../hooks/useTheme';
-
-const lineColor = 'hsl(192, 70%, 50%)';
-
-interface CheckerCords {
-  x: string;
-  y: number;
-}
-
-interface LineData {
-  id: string;
-  color: string;
-  data: CheckerCords[];
-}
-
-const transformCheckerDataToLineData = (checkers: Checker[]) => {
-  const data = [
-    {
-      id: 'Checkers',
-      color: lineColor,
-      data: checkers.map(checker => {
-        return {
-          x: checker[CheckerFields.created],
-          y: checker[CheckerFields.amount],
-        };
-      }),
-    },
-  ];
-  return data as LineData[];
-};
+import { transformCheckersToLineData } from '../../utils/mappings/lineData';
 
 export interface ResponsiveLineProps {
   checkers: Checker[];
@@ -41,8 +13,7 @@ export interface ResponsiveLineProps {
 }
 
 export const ResponsiveLine: React.FC<ResponsiveLineProps> = ({ checkers }) => {
-  const sortedCheckers = checkers.sort(sortCheckersByCreatedAsc);
-  const data = transformCheckerDataToLineData(sortedCheckers);
+  const data = transformCheckersToLineData(checkers.sort(sortCheckersByCreatedAsc));
   const { colors } = useTheme();
   return (
     <Nivo.ResponsiveLine
