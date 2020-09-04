@@ -1,26 +1,15 @@
 import * as Nivo from '@nivo/calendar';
 import * as React from 'react';
-import { Checker, CheckerFields } from '../../interfaces/Checker';
 import { useTheme } from '../../hooks/useTheme';
+import { Checker } from '../../interfaces/Checker';
+import { transformCheckersToCalendarFormat } from '../../utils/mappings/checkerCalendar';
 
 export interface ResponsiveCalendarProps {
   checkers: Checker[];
 }
 
-interface CalanderChecker {
-  day: string;
-  value: number;
-}
-
-const transformCheckersToCalendarFormat = (checkers: Checker[]): CalanderChecker[] => {
-  return checkers.map(checker => {
-    return { day: checker[CheckerFields.created], value: checker[CheckerFields.amount] };
-  });
-};
-
 export const ResponsiveCalendar: React.FC<ResponsiveCalendarProps> = ({ checkers }) => {
   const transformedCheckers = transformCheckersToCalendarFormat(checkers);
-
   const dateTo = transformedCheckers[0].day;
   const dateFrom = transformedCheckers[transformedCheckers.length - 1].day;
   const { colors } = useTheme();
