@@ -3,6 +3,9 @@ import { getQuarter } from 'date-fns';
 import { getCheckersTotalAmount } from '../calculateAmount';
 import { Quarter } from '../../interfaces/Quarter';
 
+const quarterIds = ['Jan-Mar', 'Apr-Jun', 'Jul-Sep', 'Okt-Dec'];
+const quarterLabels = ['Januari - Mars', 'April - Jun', 'Juli - September', 'Oktober - December'];
+
 export const groupCheckersByQuarter = (checkers: Checker[]): CheckersByQuarter[] => {
   const quarters = [
     getCheckersTotalAmount(checkers.filter(filterByQuarterOne)),
@@ -11,7 +14,7 @@ export const groupCheckersByQuarter = (checkers: Checker[]): CheckersByQuarter[]
     getCheckersTotalAmount(checkers.filter(filterByQuarterFour)),
   ];
   const data = quarters.map((quarter, index) => {
-    return { id: `Kvartal ${index + 1}`, label: `Kvartal ${index + 1}`, value: quarter };
+    return { id: quarterIds[index], label: quarterLabels[index], value: quarter };
   });
   return data;
 };
